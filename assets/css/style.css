@@ -1,0 +1,304 @@
+/* 
+ * assets/css/style.css
+ * 
+ * PURPOSE: 
+ * This file contains all the public-facing styles. It utilizes CSS Custom Properties (Variables)
+ * to implement a robust theming system (Feature A: Dark/Light Mode toggle).
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@400;600;700&display=swap');
+
+/**
+ * THEME VARIABLES
+ * Why variables? By defining colors as variables attached to the :root or specific data-theme attributes,
+ * we can change the entire color scheme of the website simply by swapping a single attribute on the <html> tag.
+ * The browser will automatically re-render all elements using these variables.
+ */
+
+/* DEFAULT: Dark Theme */
+:root, [data-theme="dark"] {
+    --bg-color: #121214; 
+    --surface-color: #1a1a1e; 
+    --text-primary: #e0e0e0; 
+    --text-secondary: #888888; 
+    --accent-color: #82aaff; 
+    --border-color: #333333; 
+    --error-color: #ff5555;
+    --success-color: #50fa7b;
+    
+    --font-main: 'Inter', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+}
+
+/* Light Theme Overrides */
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --surface-color: #f5f5f5;
+    --text-primary: #121212;
+    --text-secondary: #555555;
+    --accent-color: #0056b3;
+    --border-color: #dddddd;
+}
+
+/* Base Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition for theme switching */
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation Header */
+header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav a, nav button {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    color: var(--text-primary);
+}
+
+/* Layout Utilities */
+main {
+    flex: 1;
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-main);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 3rem; line-height: 1.2; }
+.accent { color: var(--accent-color); }
+.context-path {
+    font-family: var(--font-mono);
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    border-color: var(--text-primary);
+    background: var(--surface-color);
+}
+
+.btn-primary {
+    background: var(--text-primary);
+    color: var(--bg-color);
+}
+
+.btn-primary:hover {
+    background: var(--text-secondary);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    border-color: var(--text-primary);
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    flex: 1; /* Pushes the tags and links to the bottom */
+}
+
+.tech-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tech-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    border: 1px solid var(--border-color);
+    padding: 0.2rem 0.5rem;
+    color: var(--text-secondary);
+}
+
+.project-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    margin-right: 1rem;
+}
+
+/* Form Styles */
+form {
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    background: var(--bg-color);
+    max-width: 600px;
+}
+
+.form-meta {
+    text-align: right; 
+    font-family: var(--font-mono); 
+    font-size: 0.8rem; 
+    color: var(--text-secondary); 
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* System Messages */
+.message {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+.error {
+    border-color: var(--error-color);
+    color: var(--error-color);
+}
+
+.success {
+    border-color: var(--success-color);
+    color: var(--success-color);
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid var(--border-color);
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.footer-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.footer-links a:hover {
+    color: var(--text-primary);
+}
