@@ -35,7 +35,7 @@ $password = ''; // Default XAMPP/WAMP password is empty
 
 try {
     // Attempt to construct the PDO instance
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+    $pdo = new PDO("mysql:host=$host;port=3307;dbname=$dbname;charset=utf8mb4", $username, $password);
     
     // Configure PDO attributes for error handling and fetching behavior
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

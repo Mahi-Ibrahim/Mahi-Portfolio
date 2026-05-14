@@ -30,12 +30,19 @@
         <!-- Hero / Introduction Section -->
         <section class="intro">
             <span class="context-path">~/home/intro</span>
-            <h1>I build robust, scalable <span class="accent">software solutions.</span><span class="cursor">|</span></h1>
-            <p>A software architect and full-stack engineer specializing in distributed systems and performance-critical applications. Focused on translating complex business requirements into elegant, maintainable code architectures.</p>
-            
-            <div class="action-buttons">
-                <a href="#projects" class="btn">VIEW_PROJECTS</a>
-                <a href="#contact" class="btn">SET_IN_TOUCH</a>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h1>Hi, I'm Mahi! I build robust, scalable <span class="accent">software solutions.</span><span class="cursor">|</span></h1>
+                    <p>A software architect and full-stack engineer specializing in distributed systems and performance-critical applications. Focused on translating complex business requirements into elegant, maintainable code architectures.</p>
+                    
+                    <div class="action-buttons">
+                        <a href="#projects" class="btn">VIEW_PROJECTS</a>
+                        <a href="#contact" class="btn">SET_IN_TOUCH</a>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <img src="https://ui-avatars.com/api/?name=Mahi&background=1a1a1e&color=82aaff&size=200&rounded=true" alt="Mahi Profile Picture" class="profile-pic">
+                </div>
             </div>
         </section>
 
@@ -62,8 +69,8 @@
         <!-- Feature C: Contact Form Section -->
         <section id="contact" style="margin-top: 6rem;">
             <span class="context-path">~/root/communications/contact_form</span>
-            <h1>Let's interface<span class="accent">|</span></h1>
-            <p>Have a technical inquiry or a collaboration proposal? Drop a message into the buffer and I'll get back to you within 24 standard cycles.</p>
+            <h1>Let's Connect<span class="accent">|</span></h1>
+            <p>Have a technical inquiry or a collaboration proposal? Drop a message into the buffer and I'll get back to you shortly.</p>
 
             <!-- 
               The form uses semantic inputs. 
@@ -100,10 +107,10 @@
 
     <!-- Footer -->
     <footer>
-        <div>© <?php echo date("Y"); ?> ARCHITECTURE_CORE // ALL RIGHTS RESERVED</div>
+        <div>© <?php echo date("Y"); ?> MAHI_CORE // ALL RIGHTS RESERVED</div>
         <div class="footer-links">
-            <a href="#">GITHUB</a>
-            <a href="#">LINKEDIN</a>
+            <a href="https://github.com/Mahi-Ibrahim" target="_blank" rel="noopener noreferrer">GITHUB</a>
+            <a href="https://linkedin.com/in/mahi-ibrahim" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
         </div>
     </footer>
 

@@ -70,7 +70,7 @@ function handleLogin($pdo) {
             echo json_encode([
                 'status' => 'success', 
                 'message' => 'AUTHENTICATION GRANTED.',
-                'redirect' => 'admin/index.php' // Tell the JS where to navigate next
+                'redirect' => 'index.php' // Tell the JS where to navigate next
             ]);
         } else {
             // Use a generic error message. Don't reveal if the username exists or just the password was wrong.

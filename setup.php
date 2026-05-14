@@ -12,7 +12,7 @@ $username = 'root';
 $password = '';
 
 try {
-    $pdo = new PDO("mysql:host=$host;charset=utf8mb4", $username, $password);
+    $pdo = new PDO("mysql:host=$host;port=3307;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // 1. Create Database
